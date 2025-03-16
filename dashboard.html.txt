@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackboard Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Blackboard</h2>
+        <ul>
+            <li class="tab active" data-target="dashboard">Dashboard</li>
+            <li class="tab" data-target="courses">Courses</li>
+            <li class="tab" data-target="grades">Grades</li>
+        </ul>
+        <button id="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="main-content">
+        <div id="dashboard" class="content-section active-section">
+            <h1>Welcome to Blackboard</h1>
+        </div>
+
+        <div id="courses" class="content-section">
+            <h2>Your Courses</h2>
+            <ul id="course-list"></ul>
+        </div>
+
+        <div id="grades" class="content-section">
+            <h2>Your Grades</h2>
+            <table>
+                <thead>
+                    <tr><th>Course</th><th>Grade</th></tr>
+                </thead>
+                <tbody id="grade-table"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
