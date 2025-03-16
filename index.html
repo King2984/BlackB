@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Blackboard Clone</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Blackboard Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
-        <h2>Login to Blackboard</h2>
-        <input type="email" id="email" placeholder="Enter your email">
-        <input type="password" id="password" placeholder="Enter your password">
-        <button onclick="login()">Login</button>
-        <p id="error-msg" class="error"></p>
-    </div>
+        <img src="blackboard-logo.png" alt="Blackboard Logo" class="logo">
+        <h2>Sign In</h2>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p class="forgot-link"><a href="#">Forgot your password?</a></p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
