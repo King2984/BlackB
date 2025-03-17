@@ -1,13 +1,12 @@
-// When the page is loaded
 document.addEventListener('DOMContentLoaded', function() {
     if (sessionStorage.getItem("loggedIn") !== "true") {
         window.location.href = "index.html"; // Redirect if not logged in
     }
 
     const loggedInUser = sessionStorage.getItem("email");
-    const isAdmin = loggedInUser === "kingali001@gmail.com"; // Check if the logged-in user is admin
+    const isAdmin = loggedInUser === "kingali001@gmail.com"; // Check if admin
 
-    // Show or hide add course and grade forms depending on admin rights
+    // Show or hide add course and grade forms for admin
     if (isAdmin) {
         document.getElementById('add-course-form').style.display = 'block';
         document.getElementById('add-grade-form').style.display = 'block';
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCourses();
     loadGrades();
 
-    // Add course and grade form handling
+    // Add course form handling
     document.getElementById('add-course-form').addEventListener('submit', function(event) {
         event.preventDefault();
         const courseName = document.getElementById('course-name').value;
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCourses(); // Reload courses
     });
 
+    // Add grade form handling
     document.getElementById('add-grade-form').addEventListener('submit', function(event) {
         event.preventDefault();
         const courseIndex = document.getElementById('select-course').value;
