@@ -1,26 +1,25 @@
-// Initialize empty arrays to store courses and grades (using localStorage)
 if (!localStorage.getItem('courses')) {
-    localStorage.setItem('courses', JSON.stringify([])); // Stores courses as an empty array initially
+    localStorage.setItem('courses', JSON.stringify([])); // Empty courses array initially
 }
 
 if (!localStorage.getItem('grades')) {
-    localStorage.setItem('grades', JSON.stringify([])); // Stores grades as an empty array initially
+    localStorage.setItem('grades', JSON.stringify([])); // Empty grades array initially
 }
 
-// Function to load courses into the UI
+// Load courses from localStorage
 function loadCourses() {
     const courses = JSON.parse(localStorage.getItem('courses'));
     const courseList = document.getElementById('course-list');
-    courseList.innerHTML = ''; // Clear the existing list
+    courseList.innerHTML = ''; // Clear previous courses
     courses.forEach(course => {
         const courseItem = document.createElement('li');
         courseItem.textContent = `${course.name} (${course.code}) - ${course.description}`;
         courseList.appendChild(courseItem);
     });
 
-    // Populate the course selection dropdown for adding grades
+    // Populate course dropdown for adding grades
     const selectCourse = document.getElementById('select-course');
-    selectCourse.innerHTML = ''; // Clear existing options
+    selectCourse.innerHTML = ''; // Clear previous options
     courses.forEach((course, index) => {
         const option = document.createElement('option');
         option.value = index;
@@ -29,11 +28,11 @@ function loadCourses() {
     });
 }
 
-// Function to load grades into the UI
+// Load grades from localStorage
 function loadGrades() {
     const grades = JSON.parse(localStorage.getItem('grades'));
     const gradeTable = document.getElementById('grade-table');
-    gradeTable.innerHTML = ''; // Clear the existing table
+    gradeTable.innerHTML = ''; // Clear previous grades
     grades.forEach(grade => {
         const row = document.createElement('tr');
         row.innerHTML = `<td>${grade.course.name} (${grade.course.code})</td><td>${grade.grade}</td>`;
@@ -41,7 +40,7 @@ function loadGrades() {
     });
 }
 
-// Handle form submission for adding a course
+// Add course form submission
 document.getElementById('add-course-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -59,10 +58,10 @@ document.getElementById('add-course-form').addEventListener('submit', function(e
     courses.push(newCourse);
     localStorage.setItem('courses', JSON.stringify(courses));
 
-    loadCourses(); // Refresh the course list
+    loadCourses(); // Refresh course list
 });
 
-// Handle form submission for adding a grade
+// Add grade form submission
 document.getElementById('add-grade-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -81,21 +80,25 @@ document.getElementById('add-grade-form').addEventListener('submit', function(ev
     grades.push(newGrade);
     localStorage.setItem('grades', JSON.stringify(grades));
 
-    loadGrades(); // Refresh the grade table
+    loadGrades(); // Refresh grade table
 });
 
 // Logout function
 function logout() {
     sessionStorage.removeItem('loggedIn');
-    window.location.href = 'index.html';
+    sessionStorage.removeItem('email');
+    window.location.href = 'index.html'; // Redirect to login page
 }
 
-// Load the courses and grades on page load
+// Check if the user is logged in
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if logged in
     if (sessionStorage.getItem("loggedIn") !== "true") {
         window.location.href = "index.html"; // Redirect to login page if not logged in
     } else {
+        const loggedInUser = sessionStorage.getItem("email");
+        if (loggedInUser !== "ali.elzoridy@pccc.edu" && loggedInUser !== "kingali001") {
+            window.location.href = "index.html"; // Redirect to login page if user is not authorized
+        }
         loadCourses();
         loadGrades();
     }
