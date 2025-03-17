@@ -26,6 +26,13 @@
         <div id="courses" class="content-section">
             <h2>Your Courses</h2>
             <ul id="course-list"></ul>
+            <!-- Form to add new course -->
+            <form id="add-course-form">
+                <input type="text" id="course-name" placeholder="Course Name" required>
+                <input type="text" id="course-code" placeholder="Course Code" required>
+                <textarea id="course-description" placeholder="Course Description" required></textarea>
+                <button type="submit">Add Course</button>
+            </form>
         </div>
 
         <div id="grades" class="content-section">
@@ -36,9 +43,16 @@
                 </thead>
                 <tbody id="grade-table"></tbody>
             </table>
+            <!-- Form to add grade -->
+            <form id="add-grade-form">
+                <select id="select-course" required></select>
+                <input type="number" id="grade" placeholder="Grade" required>
+                <button type="submit">Add Grade</button>
+            </form>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
