@@ -40,6 +40,24 @@ function loadGrades() {
     });
 }
 
+// Admin-only functionality for adding courses and grades
+document.addEventListener('DOMContentLoaded', function() {
+    const loggedInUser = sessionStorage.getItem('email');
+    const isAdmin = loggedInUser === "kingali001@gmail.com"; // Check if admin is logged in
+
+    // Only show the add course form and add grade form if logged in as admin
+    if (isAdmin) {
+        document.getElementById('add-course-form').style.display = 'block';
+        document.getElementById('add-grade-form').style.display = 'block';
+    } else {
+        document.getElementById('add-course-form').style.display = 'none';
+        document.getElementById('add-grade-form').style.display = 'none';
+    }
+
+    loadCourses();
+    loadGrades();
+});
+
 // Add course form submission
 document.getElementById('add-course-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -81,25 +99,4 @@ document.getElementById('add-grade-form').addEventListener('submit', function(ev
     localStorage.setItem('grades', JSON.stringify(grades));
 
     loadGrades(); // Refresh grade table
-});
-
-// Logout function
-function logout() {
-    sessionStorage.removeItem('loggedIn');
-    sessionStorage.removeItem('email');
-    window.location.href = 'index.html'; // Redirect to login page
-}
-
-// Check if the user is logged in
-document.addEventListener('DOMContentLoaded', function() {
-    if (sessionStorage.getItem("loggedIn") !== "true") {
-        window.location.href = "index.html"; // Redirect to login page if not logged in
-    } else {
-        const loggedInUser = sessionStorage.getItem("email");
-        if (loggedInUser !== "ali.elzoridy@pccc.edu" && loggedInUser !== "kingali001@gmail.com") {
-            window.location.href = "index.html"; // Redirect to login page if user is not authorized
-        }
-        loadCourses();
-        loadGrades();
-    }
 });
