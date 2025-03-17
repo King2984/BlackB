@@ -8,7 +8,6 @@
     <script src="dashboard.js" defer></script>
 </head>
 <body>
-
     <div class="sidebar">
         <div class="logo">
             <h2>Blackboard</h2>
@@ -20,10 +19,11 @@
         </ul>
         <button id="logout-btn" onclick="logout()">Logout</button>
     </div>
-
+    
     <div class="main-content">
         <div id="dashboard" class="content-section active-section">
             <h1>Welcome to Blackboard</h1>
+            <p id="user-role"></p>
         </div>
 
         <div id="courses" class="content-section">
@@ -52,6 +52,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>
