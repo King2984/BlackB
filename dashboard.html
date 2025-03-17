@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackboard Clone</title>
+    <title>Blackboard Clone - Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="dashboard.js" defer></script>
 </head>
 <body>
 
@@ -26,7 +27,6 @@
         <div id="courses" class="content-section">
             <h2>Your Courses</h2>
             <ul id="course-list"></ul>
-            <!-- Form to add new course -->
             <form id="add-course-form">
                 <input type="text" id="course-name" placeholder="Course Name" required>
                 <input type="text" id="course-code" placeholder="Course Code" required>
@@ -43,7 +43,6 @@
                 </thead>
                 <tbody id="grade-table"></tbody>
             </table>
-            <!-- Form to add grade -->
             <form id="add-grade-form">
                 <select id="select-course" required></select>
                 <input type="number" id="grade" placeholder="Grade" required>
@@ -52,7 +51,5 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
-
