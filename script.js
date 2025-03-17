@@ -3,7 +3,7 @@ const validEmail = "ali.elzoridy@pccc.edu";
 const validPassword = "123123123wsa";
 
 // Define admin account login credentials
-const adminEmail = "kingali001@gmail.com"; // Changed to the new admin email
+const adminEmail = "kingali001@gmail.com"; // Updated to new admin email
 const adminPassword = "123123123wsa";
 
 // Redirect to dashboard if logged in
