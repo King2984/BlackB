@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "index.html"; // Redirect to login page if not logged in
     } else {
         const loggedInUser = sessionStorage.getItem("email");
-        if (loggedInUser !== "ali.elzoridy@pccc.edu" && loggedInUser !== "kingali001") {
+        if (loggedInUser !== "ali.elzoridy@pccc.edu" && loggedInUser !== "kingali001@gmail.com") {
             window.location.href = "index.html"; // Redirect to login page if user is not authorized
         }
         loadCourses();
