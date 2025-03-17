@@ -1,102 +1,119 @@
-/* Global styling */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7fa;
+    background-color: #f4f7f6;
+    color: #333;
 }
 
-h1, h2 {
+h2 {
     font-size: 24px;
-    color: #333;
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 16px;
+h1 {
+    font-size: 32px;
+    margin: 20px 0;
 }
 
-/* Login Page Styling */
+/* Login Page Styles */
 .login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#error-msg {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Dashboard Layout */
-body {
     display: flex;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: white;
 }
 
+.login-container form {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.login-container button {
+    padding: 10px;
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.login-container button:hover {
+    background-color: #005bb5;
+}
+
+/* Dashboard Styles */
 .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 250px;
-    background-color: #2c3e50;
+    height: 100%;
+    background-color: #0070d2;
     color: white;
     padding: 20px;
-    position: fixed;
-    height: 100%;
+    box-sizing: border-box;
 }
 
-.sidebar h2 {
-    color: #ecf0f1;
+.sidebar .logo h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .sidebar ul {
+    list-style-type: none;
     padding: 0;
 }
 
 .sidebar li {
-    list-style: none;
-    padding: 10px 0;
-    font-size: 18px;
+    padding: 15px;
     cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
 .sidebar li.active {
-    background-color: #34495e;
+    background-color: #005bb5;
+}
+
+.sidebar li:hover {
+    background-color: #005bb5;
+}
+
+.sidebar button {
+    margin-top: 30px;
+    padding: 12px;
+    background-color: #e02d2d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.sidebar button:hover {
+    background-color: #b11e1e;
 }
 
 .main-content {
     margin-left: 250px;
     padding: 20px;
-    width: calc(100% - 250px);
 }
 
 .content-section {
@@ -107,19 +124,48 @@ body {
     display: block;
 }
 
-/* Button and Form Styling in Dashboard */
-button {
-    background-color: #3498db;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #2980b9;
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-form input, form textarea, form select {
+table th {
+    background-color: #f0f0f0;
+}
+
+#add-course-form, #add-grade-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#add-course-form input, #add-grade-form input, #add-grade-form select, #add-course-form textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid #ddd;
+}
+
+#add-course-form button, #add-grade-form button {
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#add-course-form button:hover, #add-grade-form button:hover {
+    background-color: #005bb5;
 }
