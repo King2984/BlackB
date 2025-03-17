@@ -1,56 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    background-color: #1E1E1E;
-    color: white;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
 .login-container {
-    width: 300px;
-    margin: auto;
-    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
     padding: 20px;
-    background: #222;
+    background-color: #fff;
     border-radius: 10px;
-    margin-top: 100px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
 }
 
 input {
-    display: block;
-    width: 90%;
+    width: 100%;
     padding: 10px;
-    margin: 10px auto;
-    background: #333;
-    color: white;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
     border: none;
+    color: white;
+    font-size: 16px;
     border-radius: 5px;
-}
-
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #111;
-    padding: 20px;
-    position: fixed;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 15px;
-    background: #333;
     cursor: pointer;
-    text-align: center;
-    border-radius: 5px;
 }
 
-.main-content {
-    margin-left: 270px;
-    padding: 20px;
+button:hover {
+    background-color: #0056b3;
+}
+
+#error-msg {
+    color: red;
+    text-align: center;
 }
