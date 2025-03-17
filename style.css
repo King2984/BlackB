@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,17 +7,7 @@ body {
     color: #333;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 32px;
-    margin: 20px 0;
-}
-
-/* Login Page Styles */
+/* Login & Registration Form Styles */
 .login-container {
     display: flex;
     justify-content: center;
@@ -27,23 +17,29 @@ h1 {
     color: white;
 }
 
-.login-container form {
+.form-box {
     background-color: #444;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.login-container input {
+.form-box h2 {
+    margin-bottom: 15px;
+}
+
+.form-box input, .form-box select {
     margin: 10px 0;
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ddd;
+    width: 100%;
 }
 
-.login-container button {
+.form-box button {
     padding: 10px;
     background-color: #0070d2;
     color: white;
@@ -53,119 +49,15 @@ h1 {
     border-radius: 4px;
 }
 
-.login-container button:hover {
+.form-box button:hover {
     background-color: #005bb5;
 }
 
-/* Dashboard Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #0070d2;
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.sidebar .logo h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 15px;
+.form-box a {
+    color: #00aaff;
     cursor: pointer;
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-radius: 4px;
 }
 
-.sidebar li.active {
-    background-color: #005bb5;
-}
-
-.sidebar li:hover {
-    background-color: #005bb5;
-}
-
-.sidebar button {
-    margin-top: 30px;
-    padding: 12px;
-    background-color: #e02d2d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-.sidebar button:hover {
-    background-color: #b11e1e;
-}
-
-.main-content {
-    margin-left: 250px;
-    padding: 20px;
-}
-
-.content-section {
+.hidden {
     display: none;
-}
-
-.content-section.active-section {
-    display: block;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #f0f0f0;
-}
-
-#add-course-form, #add-grade-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-#add-course-form input, #add-grade-form input, #add-grade-form select, #add-course-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-#add-course-form button, #add-grade-form button {
-    background-color: #0070d2;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 4px;
-}
-
-#add-course-form button:hover, #add-grade-form button:hover {
-    background-color: #005bb5;
 }
